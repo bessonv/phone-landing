@@ -1,0 +1,58 @@
+.footer {
+  background-color: @main;
+  color: white;
+  padding: 1rem @side-padding;
+  text-align: center;
+  
+  &__logo {
+    font-family: Gotham;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 25px;
+    
+    &::before {
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+      content: "";
+      width: 20px;
+      height: 25px;
+      background: url(/icons/icon-white.svg) 0 0 no-repeat;
+    }
+  }
+
+  &__legal {
+    margin: 1rem 0;
+    font-family: Gotham-Light;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 12px;
+    display: block;
+
+    &:link, &:visited {
+      color: white;
+    }
+  }
+  
+  &__text {
+    display: inherit;
+    font-family: Gotham-Light;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 8px;
+    line-height: 9px;
+    margin-bottom: 20px;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__read {
+    padding: 6px 18px;
+    background-color: @main;
+    color: white;
+    border: solid 1px white;
+    border-radius: 30px;
+  }
+}

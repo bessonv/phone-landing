@@ -1,0 +1,98 @@
+.shipping {
+  padding: 0 @side-padding;
+
+  h2 {
+    color: @black;
+    font-family: Gotham;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__details {
+    border-top: solid @dark-grey;
+    border-bottom: solid @dark-grey;
+    background-color: @light-grey;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+
+    transition: max-height 400ms ease-out;
+
+    &[open] summary ~ * {
+      animation: sweep .5s ease-in-out;
+    }
+
+    &[open] > .shipping__header::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__header {
+    color: @pink;
+    font-family: Gotham;
+    font-size: 14px;
+    line-height: 16px;
+    
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+
+    h3 {
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      width: 14px;
+      height: 20px;
+      background: url(/icons/arrow-right.svg) 0 0 no-repeat;
+      transform: rotate(90deg);
+      margin-left: auto;
+      margin-right: 5px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__brands {
+    margin: 12px 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__brand {
+    max-height: 30px;
+  }
+
+  &__info {
+    color: @black;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 100;
+    line-height: 15px;
+    margin-top: 12px;
+
+    b {
+      font-family: Gotham;
+      font-weight: 700;
+    }
+  }
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
